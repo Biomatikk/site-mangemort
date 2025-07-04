@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="styles.css?v=1.1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grimoire des Mangemorts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=UnifrakturCook&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+    <a href="index.html">Accueil</a>
+    <a href="explication mangemort.html">Explication Mangemorts</a>
+    <div class="dropdown">
+    <a href="reglements.html" class="dropbtn">Règlements</a>
+    <div class="dropdown-content">
+      <a href="reglement-interne.html">Règlement Interne</a>
+      <a href="reglement-manoir.html">Règlement du Manoir</a>
+    </div>
+    </div>
+    <div class="dropdown">
+    <a href="familles.html" class="dropbtn">Familles</a>
+    <div class="dropdown-content">
+      <a href="famille-folie.html">Folie</a>
+      <a href="famille-destruction.html">Destruction</a>
+      <a href="famille-infiltration.html">Infiltration</a>
+      <a href="famille-proliferation.html">Prolifération</a>
+    </div>
+    </div>
+    <div class="dropdown">
+    <a href="liste-sorts.html" class="dropbtn">Liste des sorts</a>
+    <div class="dropdown-content">
+      <a href="#">Explication des sorts</a>
+    </div>
+    </div>
+    </nav>
+  </header>
+  <div class="content">
+    <h1>Bienvenue sur le document officiel des Mangemorts</h1>
+    <img src="C:\Users\Kevin\Downloads\image_2025-06-29_2213185692.png" alt="Eldria">
+    <p>Il est <span style="color:#d4af37;">impératif</span> de prendre connaissance des documents mentionnés ci-dessous, leur lecture étant <span style="color:#d4af37;">obligatoire</span> pour garantir une compréhension <span style="color:#d4af37;">complète et conforme</span> des informations qu'ils contiennent.<br>Merci pour votre compréhension.</p>
+    <p><span style="color:#d4af37;">Cliquez pour accéder aux différents documents</span></p>
+    
+    <div class="reglement-buttons">
+      <a href="explication mangemort.html" class="reglement-btn">Explications des Mangemorts</a>
+      <a href="reglements.html" class="reglement-btn">Règlements</a>
+      <a href="familles.html" class="reglement-btn">Familles</a>
+      <a href="liste-sorts.html" class="reglement-btn">Liste des sorts</a>
+    </div>
+  </div>
+  <script>
+    // Transition fade in à l'arrivée
+    document.addEventListener('DOMContentLoaded', function() {
+      const content = document.querySelector('.content');
+      if(content) {
+        content.style.opacity = 0;
+        content.style.transition = 'opacity 0.5s';
+        setTimeout(() => { content.style.opacity = 1; }, 50);
+      }
+      // Transition fade out au clic sur lien interne ou bouton
+      document.querySelectorAll('a').forEach(function(link) {
+        const href = link.getAttribute('href');
+        if(href && !href.startsWith('http') && !href.startsWith('#')) {
+          link.addEventListener('click', function(e) {
+            if(link.target !== '_blank' && !e.ctrlKey && !e.metaKey) {
+              e.preventDefault();
+              if(content) {
+                content.style.opacity = 0;
+                setTimeout(() => { window.location = href; }, 400);
+              } else {
+                window.location = href;
+              }
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="styles.css?v=1.1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Famille de la Prolifération - Grimoire des Mangemorts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=UnifrakturCook&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+    <a href="index.html">Accueil</a>
+    <a href="explication mangemort.html">Explication Mangemorts</a>
+    <div class="dropdown">
+    <a href="reglements.html" class="dropbtn">Règlements</a>
+    <div class="dropdown-content">
+      <a href="reglement-interne.html">Règlement Interne</a>
+      <a href="reglement-manoir.html">Règlement du Manoir</a>
+    </div>
+    </div>
+    <div class="dropdown">
+    <a href="familles.html" class="dropbtn">Familles</a>
+    <div class="dropdown-content">
+      <a href="famille-folie.html">Folie</a>
+      <a href="famille-destruction.html">Destruction</a>
+      <a href="famille-infiltration.html">Infiltration</a>
+      <a href="famille-proliferation.html">Prolifération</a>
+    </div>
+    </div>
+    <div class="dropdown">
+    <a href="liste-sorts.html" class="dropbtn">Liste des sorts</a>
+    <div class="dropdown-content">
+      <a href="#">Explication des sorts</a>
+    </div>
+    </div>
+    </nav>
+  </header>
+  <div class="content">
+    <h1>Famille de la Prolifération</h1>
+    
+    <p>La famille de la Prolifération fut fondée par l'évêque Viretus, dont le nom est issu du verbe latin virere, signifiant « être vert », « pousser », « croître ». Un nom choisi pour symboliser la croissance inarrêtable, semblable à la végétation qui, patiemment, s'étend, recouvre et finit par étouffer jusqu'aux pierres les plus dures. Par ce nom, Viretus insuffla à sa descendance la vocation sacrée de faire prospérer le culte, de semer ses graines et d'en surveiller l'éclosion.</p>
+    
+    <p>Dès sa fondation, la famille de la Prolifération reçut la charge capitale du recrutement : découvrir, séduire et convaincre les âmes perdues ou ambitieuses d'embrasser la cause. Mais leur rôle ne s'arrête pas là. Ils organisent également les épreuves initiatiques, où chaque candidat doit prouver sa loyauté et sa valeur pour mériter d'être reconnu comme membre à part entière. Plus encore, la famille de la Prolifération supervise toutes les ressources du culte : les hommes et femmes qu'elle rallie, les biens matériels qu'elle collecte, les soutiens économiques qu'elle obtient et même les secrets les plus précieux.</p>
+    
+    <p>Dotés d'un art oratoire exceptionnel, les membres de cette famille sont les porte-voix du culte, capables d'enflammer les foules ou de murmurer à l'oreille d'un seul pour semer la conviction dans le cœur le plus récalcitrant. Leurs discours sont ciselés comme des lames, maniés avec une précision redoutable, car une seule phrase mal placée peut mettre en péril non seulement une mission, mais l'existence même du culte.</p>
+    
+    <p>C'est pourquoi la famille de la Prolifération se doit d'être d'une rigueur sans faille, d'une organisation parfaite. Chaque mot, chaque geste, chaque stratégie est mûrement réfléchi, comme les racines d'un arbre qui s'étendent sous terre avant que le tronc n'apparaisse au grand jour. Leur patience n'a d'égal que leur ambition : faire prospérer le culte jusqu'à ce qu'il soit devenu trop vaste et trop enraciné pour être déraciné.</p>
+    
+    <p>Leur lien avec la famille de l'Infiltration est si étroit qu'on les compare parfois aux deux faces d'une même feuille : tandis que la Prolifération recrute et séduit, l'Infiltration s'infiltre et observe. Ensemble, elles tissent un réseau invisible, trouvant de nouveaux adeptes jusque dans l'école de Poudlard, là où naissent les plus grands sorciers et où germent aussi, à leur insu, les graines de la discorde et du fanatisme.</p>
+    
+    <p>C'est par cette alliance subtile, faite de patience, de ruse et d'éloquence, que la famille de la Prolifération espère faire éclore un jour la vision ultime de Viretus : un culte si vaste et si profondément enraciné qu'aucune lumière ne pourra plus jamais l'arracher à l'ombre.</p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const content = document.querySelector('.content');
+      if(content) {
+        content.style.opacity = 0;
+        content.style.transition = 'opacity 0.5s';
+        setTimeout(() => { content.style.opacity = 1; }, 50);
+      }
+      document.querySelectorAll('a').forEach(function(link) {
+        const href = link.getAttribute('href');
+        if(href && !href.startsWith('http') && !href.startsWith('#')) {
+          link.addEventListener('click', function(e) {
+            if(link.target !== '_blank' && !e.ctrlKey && !e.metaKey) {
+              e.preventDefault();
+              if(content) {
+                content.style.opacity = 0;
+                setTimeout(() => { window.location = href; }, 400);
+              } else {
+                window.location = href;
+              }
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html> 

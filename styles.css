@@ -161,7 +161,6 @@ nav {
   box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
-/* Suppression des puces de liste pour la page des sorts */
 .content ul {
   list-style: none;
   padding-left: 0;
@@ -171,7 +170,6 @@ nav {
   margin-bottom: 10px;
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 800px) {
   .content {
     max-width: 98vw;

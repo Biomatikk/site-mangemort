@@ -50,7 +50,6 @@
     </div>
   </div>
   <script>
-    // Transition fade in à l'arrivée
     document.addEventListener('DOMContentLoaded', function() {
       const content = document.querySelector('.content');
       if(content) {
@@ -58,7 +57,6 @@
         content.style.transition = 'opacity 0.5s';
         setTimeout(() => { content.style.opacity = 1; }, 50);
       }
-      // Transition fade out au clic sur lien interne ou bouton
       document.querySelectorAll('a').forEach(function(link) {
         const href = link.getAttribute('href');
         if(href && !href.startsWith('http') && !href.startsWith('#')) {

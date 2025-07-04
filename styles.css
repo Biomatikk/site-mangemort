@@ -170,3 +170,56 @@ nav {
 .content li {
   margin-bottom: 10px;
 }
+
+/* --- Responsive Design --- */
+@media (max-width: 800px) {
+  .content {
+    max-width: 98vw;
+    padding: 20px;
+    margin: 20px 1vw;
+    min-height: unset;
+  }
+  .content img {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+  }
+  header {
+    flex-direction: column;
+    padding: 15px 0;
+    min-height: unset;
+  }
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 100vw;
+  }
+  .reglement-buttons {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .reglement-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 15px;
+  }
+  .content h1 {
+    font-size: 22px;
+  }
+  header a, .dropdown-content a {
+    font-size: 15px;
+    margin: 0 8px;
+    padding: 6px 0;
+  }
+  .content img {
+    width: 98vw;
+    max-width: 98vw;
+  }
+}
